@@ -6,10 +6,15 @@ import (
 )
 
 func main() {
+
+	fmt.Println("What is your name?")
+	var firstName string
+	fmt.Scanln(&firstName)
 	currentTime := time.Now()
 	dayPart := getDaypart(currentTime)
-	fmt.Println("good", dayPart)
-	fmt.Println("The current time is:", currentTime)
+	fmt.Println("good", dayPart, firstName)
+	fmt.Println("The current time is:", currentTime.Format(time.RFC822))
+
 }
 
 func getDaypart(datetime time.Time) string {
